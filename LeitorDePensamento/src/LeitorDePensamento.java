@@ -14,7 +14,7 @@ public class LeitorDePensamento {
         entrada.close(); //serve para fechar o objeto entrada
 
 
-        String res = (sorteado == chute)? "Parabens, Voce Acertou!" : String.format("Pena, voce errou. O número sorteado é %d%n", sorteado);
+        String res = (sorteado == chute)? "Parabens, Voce Acertou!" : String.format("Pena, voce errou. O número sorteado é %d%n", sorteado); // verifica se o palpite é igual ao numero randomico. Se igual, improme primeira String, se nao imprime a segunda String formatada e diz o valor sorteado.
         System.out.println(res);
     }
 }
