@@ -11,6 +11,7 @@ public class LeitorDePensamento {
 
         System.out.print("Tente acerter o número entre 1 e 5 que pensei: ");
         int chute = entrada.nextInt();
+        entrada.close(); //serve para fechar o objeto entrada
 
         if (sorteado == chute){
             System.out.println("Parabens, Voce Acertou!");
