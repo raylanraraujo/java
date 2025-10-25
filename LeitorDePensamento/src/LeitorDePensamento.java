@@ -5,7 +5,7 @@ public class LeitorDePensamento {
         int min = 1;
         int max = 6;
         double numero = min + Math.random() * (max - min);
-        int sorteado = (int) Math.floor(numero);
+        int sorteado = (int) numero;
         
         Scanner entrada = new Scanner(System.in); // cria o leitor
 
@@ -13,10 +13,8 @@ public class LeitorDePensamento {
         int chute = entrada.nextInt();
         entrada.close(); //serve para fechar o objeto entrada
 
-        if (sorteado == chute){
-            System.out.println("Parabens, Voce Acertou!");
-        } else{
-            System.out.printf("Pena, voce errou. O número sorteado é %d%n", sorteado);
-        }
+
+        String res = (sorteado == chute)? "Parabens, Voce Acertou!" : String.format("Pena, voce errou. O número sorteado é %d%n", sorteado);
+        System.out.println(res);
     }
 }
