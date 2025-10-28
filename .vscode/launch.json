@@ -1,0 +1,56 @@
+{
+    // Use o IntelliSense para saber mais sobre os atributos possíveis.
+    // Focalizar para exibir as descrições dos atributos existentes.
+    // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "java_1ab6fdcd"
+        },
+        {
+            "type": "java",
+            "name": "CondicaoComposta",
+            "request": "launch",
+            "mainClass": "CondicaoComposta",
+            "projectName": "java_1ab6fdcd"
+        },
+        {
+            "type": "java",
+            "name": "CondicaoCompostaEncadeada",
+            "request": "launch",
+            "mainClass": "CondicaoCompostaEncadeada",
+            "projectName": "java_1ab6fdcd"
+        },
+        {
+            "type": "java",
+            "name": "CondicaoSimples",
+            "request": "launch",
+            "mainClass": "CondicaoSimples",
+            "projectName": "java_1ab6fdcd"
+        },
+        {
+            "type": "java",
+            "name": "ParOuImpar",
+            "request": "launch",
+            "mainClass": "ParOuImpar",
+            "projectName": "java_1ab6fdcd"
+        },
+        {
+            "type": "java",
+            "name": "TiposPrimitivos",
+            "request": "launch",
+            "mainClass": "TiposPrimitivos",
+            "projectName": "java_1ab6fdcd"
+        }
+    ]
+}

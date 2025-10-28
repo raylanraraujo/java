@@ -9,5 +9,6 @@ public class TiposPrimitivos {
         System.out.format("Digite a nota do %s: ", nome); //exibe na tela o que é preciso que o usuário digite
         float nota = teclado.nextFloat(); //serve para ler a entrada Float do usuario pelo teclado
         System.out.format("\nA nota de %s é %.2f.\n", nome, nota); //Exibe o resultado final com todas as informações
+        teclado.close();
     }
 }
