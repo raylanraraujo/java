@@ -10,12 +10,14 @@ public class CondicaoCompostaEncadeada {
         int idade = 2025 - nascimento;
         String podeVotar;
 
-        if (idade < 16){
+        if (idade < 16) {
             podeVotar = "Não vota";
-        } else if (idade >= 18 && idade <= 70){
-            podeVotar = "Obrigatório";
         } else {
-            podeVotar = "Opcional";
+            if ((idade >= 16 && idade < 18) || idade > 70){ //dizemos que é encadeado porque tem uma estrutura condicional dentro de outra
+                podeVotar = "Opcional";
+            } else {
+                podeVotar = "Obrigatório";
+            }
         }
         System.out.printf("Nascimento: %d\nIdade: %d\nVoto: %s\n" ,nascimento, idade, podeVotar);
         teclado.close();
