@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CondicaoMultiplaEscolha",
+            "request": "launch",
+            "mainClass": "CondicaoMultiplaEscolha",
+            "projectName": "java_1ab6fdcd"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
