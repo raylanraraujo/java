@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "formaTriangulo",
+            "request": "launch",
+            "mainClass": "formaTriangulo",
+            "projectName": "java_1ab6fdcd"
+        },
+        {
+            "type": "java",
+            "name": "teste",
+            "request": "launch",
+            "mainClass": "teste",
+            "projectName": "java_1ab6fdcd"
+        },
+        {
+            "type": "java",
             "name": "CondicaoMultiplaEscolha",
             "request": "launch",
             "mainClass": "CondicaoMultiplaEscolha",
