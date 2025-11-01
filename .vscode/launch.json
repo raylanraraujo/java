@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MensagemJanela",
+            "request": "launch",
+            "mainClass": "MensagemJanela",
+            "projectName": "java_1ab6fdcd"
+        },
+        {
+            "type": "java",
             "name": "formaTriangulo",
             "request": "launch",
             "mainClass": "formaTriangulo",
