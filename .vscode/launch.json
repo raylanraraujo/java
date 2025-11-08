@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "pooAula04",
+            "request": "launch",
+            "mainClass": "pooAula04",
+            "projectName": "java_1ab6fdcd"
+        },
+        {
+            "type": "java",
             "name": "pooAula03",
             "request": "launch",
             "mainClass": "pooAula03",
