@@ -2,7 +2,7 @@ public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
 
-        Conta conta1 = new Conta(01, "Raylan");
+        Conta conta1 = new Conta();
 
         conta1.abrirConta("CP");
         //conta1.sacar(200);

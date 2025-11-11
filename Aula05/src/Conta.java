@@ -5,10 +5,10 @@ public class Conta {
     private float saldo;
     private boolean status;
 
-    public Conta(int numero, String dono){
-        this.numero = numero;
+    public Conta(){
+        //this.numero = numero;
         //this.tipo = tipo;
-        this.dono = dono;
+        //this.dono = dono;
         this.saldo = 0f;
         this.status = false;
     }
@@ -56,6 +56,7 @@ public class Conta {
     public void abrirConta(String tipo){
         if (this.status == false){
             setStatus(true);
+            setTipo(tipo);
             if ("CC".equals(tipo)){
                 this.saldo = 50f;
             } else if("CP".equals(tipo)) {
