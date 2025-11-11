@@ -8,6 +8,7 @@ public class App {
         //conta1.sacar(200);
         //conta1.fecharConta();
         conta1.depositar(33);
+        conta1.sacar(182);
         System.out.println(conta1);
     }
 }

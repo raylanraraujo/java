@@ -77,13 +77,19 @@ public class Conta {
     public void depositar (float dinheiro){
         if(status) {
             this.saldo += dinheiro;
+            System.out.printf("Depósito de R$ %.2f realizado com sucesso.\n", dinheiro);
         } else{
-            System.out.println("Erro ao depositar");
+            System.out.printf("Não é possível depositar R$ %.2f\nStatus Conta aberta: %b\n", dinheiro ,isStatus());
         }
     }
 
     public void sacar(float dinheiro){
-        this.saldo -= dinheiro;
+        if(status && saldo >= dinheiro){
+            this.saldo -= dinheiro;
+            System.out.printf("Saque de R$ %.2f realizado com sucesso.\n",dinheiro);
+        } else {
+            System.out.println("Saldo insuficiente!");
+        }
     }
 
     public void pagarMensalidade(float mensalidade){
