@@ -1,8 +1,9 @@
 public class Caneta {
     public String modelo;
-    private float ponta;
+    float ponta;
     private boolean tampada;
-    private String cor;
+    String cor;
+    public int carga;
 
     public Caneta(String m, float p){// o método que tem o mesmo nome da sua classe é o método construtor.
         setModelo(m);
@@ -56,5 +57,10 @@ public class Caneta {
         System.out.println("Ponta: "+ this.ponta);
         System.out.println("Cor: " + this.getCor());
         System.out.println("Está tampada: " + this.getTampada());
+    }
+
+    public void rabiscar() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'rabiscar'");
     }
 }

@@ -5,9 +5,9 @@ public class Conta {
     private float saldo;
     private boolean status;
 
-    public Conta(int numero, String tipo, String dono){
+    public Conta(int numero, String dono){
         this.numero = numero;
-        this.tipo = tipo;
+        //this.tipo = tipo;
         this.dono = dono;
         this.saldo = 0f;
         this.status = false;
@@ -53,12 +53,32 @@ public class Conta {
         this.status = status;
     }
 
-    public void abrirConta(){
-        setStatus(true);
+    public void abrirConta(String tipo){
+        if (this.status == false){
+            setStatus(true);
+            if ("CC".equals(tipo)){
+                this.saldo = 50f;
+            } else if("CP".equals(tipo)) {
+                this.saldo = 150f;
+            }   
+        }
+    }
+
+    public void fecharConta(){
+        if(status && this.saldo == 0){
+            this.status = false;
+            System.out.println("Conta fechada.");
+        } else {
+            System.out.println("Não é possível fechar a conta.");
+        }
     }
 
     public void depositar (float dinheiro){
-       this.saldo += dinheiro;
+        if(status) {
+            this.saldo += dinheiro;
+        } else{
+            System.out.println("Erro ao depositar");
+        }
     }
 
     public void sacar(float dinheiro){
