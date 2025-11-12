@@ -5,10 +5,16 @@ public class Conta {
     private float saldo;
     private boolean status;
 
+    public void estadoAtual() {
+        System.out.println("----------------------------------------");
+        System.out.println("Conta: " + this.getNumero());
+        System.out.println("Tipo: " + this.getTipo());
+        System.out.println("Dono: " + this.getDono());
+        System.out.println("Saldo: "+ this.getSaldo());
+        System.out.println("Status: " + this.isStatus());
+    }
+
     public Conta(){
-        //this.numero = numero;
-        //this.tipo = tipo;
-        //this.dono = dono;
         this.saldo = 0f;
         this.status = false;
     }
@@ -54,20 +60,21 @@ public class Conta {
     }
 
     public void abrirConta(String tipo){
-        if (this.status == false){
-            setStatus(true);
-            setTipo(tipo);
+        if (!this.isStatus()){ //this.isStatus() == false
+            this.setStatus(true);
+            this.setTipo(tipo);
             if ("CC".equals(tipo)){
-                this.saldo = 50f;
+                this.saldo = 50f; // posso declarar assim de maneira direta ou usando o método set
             } else if("CP".equals(tipo)) {
-                this.saldo = 150f;
-            }   
+                this.setSaldo(150);
+            } 
+            System.out.println("Conta aberta com sucesso!");  
         }
     }
 
     public void fecharConta(){
-        if(status && this.saldo == 0){
-            this.status = false;
+        if(this.isStatus() && this.saldo == 0){
+            this.setStatus(false);
             System.out.println("Conta fechada.");
         } else {
             System.out.println("Não é possível fechar a conta.");
@@ -75,8 +82,9 @@ public class Conta {
     }
 
     public void depositar (float dinheiro){
-        if(status) {
-            this.saldo += dinheiro;
+        if(this.isStatus()) {
+            //this.saldo += dinheiro;
+            this.setSaldo(this.getSaldo() + dinheiro); //usando os métodos especiais
             System.out.printf("Depósito de R$ %.2f realizado com sucesso.\n", dinheiro);
         } else{
             System.out.printf("Não é possível depositar R$ %.2f\nStatus Conta aberta: %b\n", dinheiro ,isStatus());
@@ -84,16 +92,32 @@ public class Conta {
     }
 
     public void sacar(float dinheiro){
-        if(status && saldo >= dinheiro){
-            this.saldo -= dinheiro;
-            System.out.printf("Saque de R$ %.2f realizado com sucesso.\n",dinheiro);
+        if(isStatus()){
+            if(this.getSaldo() >= dinheiro){
+                //this.saldo -= dinheiro;
+                this.setSaldo(this.getSaldo() - dinheiro);
+                System.out.printf("Saque de R$ %.2f realizado com sucesso.\n",dinheiro);
+
+            } else {
+                System.out.println("Saldo insuficiente!");
+            }
         } else {
-            System.out.println("Saldo insuficiente!");
+            System.out.println("Impossível sacar de conta fechada.");
         }
     }
 
-    public void pagarMensalidade(float mensalidade){
-        this.saldo -= mensalidade;
+    public void pagarMensalidade(){
+        float mensalidade =0f; //inicializa a mensalidade zerada pois caso 
+
+        if ("CC".equals(this.getTipo())){
+            mensalidade = 12f;
+        } else if ("CP".equals(this.getTipo())){
+            mensalidade = 20f;
+        }
+        
+        if(this.isStatus()){
+            this.setSaldo(this.getSaldo() - mensalidade);
+        }
     }
 
     @Override
