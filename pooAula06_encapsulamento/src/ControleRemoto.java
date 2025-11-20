@@ -11,27 +11,27 @@ public class ControleRemoto implements Controlador{
         this.tocando = false;
     }
 
-    public int getVolume(){
+    private int getVolume(){
         return this.volume;
     }
 
-    public void setVolume(int volume){
+    private void setVolume(int volume){
         this.volume = volume;
     }
 
-    public boolean isLigado(){
+    private boolean isLigado(){
         return this.ligado;
     }
 
-    public void setLigado(boolean ligado){
+    private void setLigado(boolean ligado){
         this.ligado = ligado;
     }
 
-    public boolean isTocando(){
+    private boolean isTocando(){
         return this.tocando;
     }
 
-    public void setTocando(boolean tocando){
+    private void setTocando(boolean tocando){
         this.tocando = tocando;
     }
 
@@ -49,12 +49,14 @@ public class ControleRemoto implements Controlador{
 
     @Override
     public void abrirMenu() {
-        System.out.println("Está ligado: " + this.isLigado());
+        System.out.println("---- MENU ----");
+        System.out.println("Está ligado? " + this.isLigado());
         System.out.println("Está tocando? " + this.isTocando());
         System.out.println(this.getVolume());
         for(int i = 0; i <= this.getVolume(); i+=10){
-            System.out.println("[]");
+            System.out.print("|");
         }
+        System.out.println("");
     }
 
     @Override
@@ -66,6 +68,8 @@ public class ControleRemoto implements Controlador{
     public void maisVolume() {
         if (this.isLigado()){
             this.setVolume(this.getVolume() + 5);
+        } else{
+            System.out.println("Impossível aumentar volume.");
         }
     }
 
@@ -73,7 +77,9 @@ public class ControleRemoto implements Controlador{
     public void menosVolume() {
         if(this.isLigado()){
             this.setVolume(getVolume() - 5);
-        }        
+        } else {
+            System.out.println("Impossível diminuir volume.");
+        }
     }
 
     @Override
@@ -94,6 +100,8 @@ public class ControleRemoto implements Controlador{
     public void play() {
         if(this.isLigado() && !(this.isTocando())){
             this.setTocando(true);
+        } else {
+            System.out.println("Não consegui reproduzir.");
         }
     }
 
@@ -101,6 +109,8 @@ public class ControleRemoto implements Controlador{
     public void pause() {
         if(this.isLigado() && this.isTocando()){
             this.setTocando(false);
+        } else{
+            System.out.println("Não consegui pausar.");
         }
     }
 
