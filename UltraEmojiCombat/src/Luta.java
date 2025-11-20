@@ -8,40 +8,38 @@ public class Luta {
 
     // Métodos da classe
     public void marcarLuta(Lutador l1, Lutador l2){
-      if(l1.getCategoria() == l2.getCategoria() && l1 != l2){
-        setAprovada(true);
-        setDesafiado(l1);
-        setDesafiante(l2);
+      if(l1.getCategoria().equals(l2.getCategoria()) && l1 != l2){
+        this.setAprovada(true);
+        this.setDesafiado(l1);
+        this.setDesafiante(l2);
       } else {
-        setAprovada(false);
-        setDesafiado(null);
-        setDesafiante(null);
+        this.setAprovada(false);
+        this.setDesafiado(null);
+        this.setDesafiante(null);
       }
     }
 
     public void lutar(){
         if(this.aprovada){
-            desafiado.apresentar();
-            desafiante.apresentar();
-            int vencedor = new Random().nextInt(3);
+            this.desafiado.apresentar();
+            this.desafiante.apresentar();
+            int vencedor = new Random().nextInt(3); //Gera um número aleatório 0 , 1 ou 2
 
             switch (vencedor) {
-                case 0:
+                case 0: //caso de empate
                     System.out.println("Luta empatada");
-                    desafiado.empatarLuta();
-                    desafiante.empatarLuta();
+                    this.desafiado.empatarLuta();
+                    this.desafiante.empatarLuta();
                     break;
-                case 1:
-                    System.out.println(desafiado.getNome() + " ganhou a luta.");
-                    desafiado.ganharLuta();
-                    desafiante.perderLuta();
+                case 1: // caso o desafiado ganhe a luta
+                    System.out.println(this.desafiado.getNome() + " ganhou a luta.");
+                    this.desafiado.ganharLuta();
+                    this.desafiante.perderLuta();
                     break;
-                case 2:
-                    System.out.println(desafiante.getNome() + " ganhou a luta.");
-                    desafiado.perderLuta();
-                    desafiante.ganharLuta();
-                    break;
-                default:
+                case 2: // caso o desafiante ganhe a letra
+                    System.out.println(this.desafiante.getNome() + " ganhou a luta.");
+                    this.desafiado.perderLuta();
+                    this.desafiante.ganharLuta();
                     break;
             }
         } else{
