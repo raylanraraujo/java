@@ -8,13 +8,26 @@ public class Livro implements Publicacao{
     private Pessoa leitor;
 
     //Metodos da classe
-    public void detalhes(){}
+    public void detalhes(){
+        System.out.println("======= Sorbre o livro =======");
+        System.out.println("Título: "+ this.getTitulo());
+        System.out.println("Autor: "+ this.getAutor());
+        System.out.println("Total de páginas: " + this.getTotalPaginas());
+        System.out.println("Página atual: " + this.getPaginaAtual());
+        System.out.println("Página atual: " + this.getPaginaAtual());
+        System.out.println("Aberto: " + this.isAberto());
+        System.out.println("Leitor: " + this.getLeitor());
+    }
 
     
 
     @Override
     public void abrir() {
-        // TODO Auto-generated method stub
+        if(!isAberto()){
+            this.setAberto(true);
+        } else {
+            System.out.println("O livro " + this.getTitulo() + "já está aberto.");
+        }
         
     }
 
@@ -22,15 +35,18 @@ public class Livro implements Publicacao{
 
     @Override
     public void avancarPagina() {
-        // TODO Auto-generated method stub
-        
+        this.setPaginaAtual((this.getPaginaAtual() + 1));  
     }
 
 
 
     @Override
     public void fechar() {
-        // TODO Auto-generated method stub
+        if(isAberto()){
+            this.setAberto(false);
+        } else {
+            System.out.println("O livro " + this.getTitulo() + " já está fechado.");
+        }
         
     }
 
@@ -46,8 +62,7 @@ public class Livro implements Publicacao{
 
     @Override
     public void voltarPagina() {
-        // TODO Auto-generated method stub
-        
+        this.setPaginaAtual((this.getPaginaAtual() - 1));
     }
 
 
