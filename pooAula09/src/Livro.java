@@ -8,15 +8,33 @@ public class Livro implements Publicacao{
     private Pessoa leitor;
 
     //Metodos da classe
-    public void detalhes(){
-        System.out.println("======= Sorbre o livro =======");
-        System.out.println("Título: "+ this.getTitulo());
-        System.out.println("Autor: "+ this.getAutor());
-        System.out.println("Total de páginas: " + this.getTotalPaginas());
-        System.out.println("Página atual: " + this.getPaginaAtual());
-        System.out.println("Página atual: " + this.getPaginaAtual());
-        System.out.println("Aberto: " + this.isAberto());
-        System.out.println("Leitor: " + this.getLeitor());
+
+    
+
+    // public void detalhes(){
+    //     System.out.println("======= Sorbre o livro =======");
+    //     System.out.println("Título: "+ this.getTitulo());
+    //     System.out.println("Autor: "+ this.getAutor());
+    //     System.out.println("Total de páginas: " + this.getTotalPaginas());
+    //     System.out.println("Página atual: " + this.getPaginaAtual());
+    //     System.out.println("Página atual: " + this.getPaginaAtual());
+    //     System.out.println("Aberto: " + this.isAberto());
+    //     System.out.println("Leitor: " + this.getLeitor());
+    // }
+
+    //Guanabara preferiu colocar como se fosse um toString e renomear
+    public String detalhes() {
+        return "Livro [ Título = " + titulo + ", autor = " + autor + ", Total de Páginas = " + totalPaginas + ", Página Atual = "
+                + paginaAtual + ", Aberto = " + aberto + ", Leitor = " + leitor + " ]";
+    }
+
+    public Livro(String titulo, String autor, int totalPaginas, Pessoa leitor){
+        this.titulo = titulo;
+        this.autor = autor;
+        this.totalPaginas = totalPaginas;
+        this.paginaAtual = 0;
+        this.aberto = false;
+        this.leitor = leitor;
     }
 
     
@@ -30,8 +48,6 @@ public class Livro implements Publicacao{
         }
         
     }
-
-
 
     @Override
     public void avancarPagina() {

@@ -4,7 +4,13 @@ public class Pessoa {
     private String sexo;
 
     public void fazerAniversario(){
-        this.setIdade((this.getIdade() + 1));
+        this.idade++;
+    }
+
+    public Pessoa(String nome, int idade, String sexo){
+        this.setNome(nome);
+        this.setIdade(idade);
+        this.setSexo(sexo);
     }
 
     public String getNome(){
