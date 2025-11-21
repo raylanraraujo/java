@@ -1,4 +1,4 @@
-public class Livro implements Publicacao{
+public class Livro implements Publicacao {
     //Atributos
     private String titulo;
     private String autor;
@@ -24,8 +24,8 @@ public class Livro implements Publicacao{
 
     //Guanabara preferiu colocar como se fosse um toString e renomear
     public String detalhes() {
-        return "Livro [ Título = " + titulo + ", autor = " + autor + ", Total de Páginas = " + totalPaginas + ", Página Atual = "
-                + paginaAtual + ", Aberto = " + aberto + ", Leitor = " + leitor + " ]";
+        return "Livro [ \nTítulo = " + titulo + "\nAutor = " + autor + ", \nTotal de Páginas = " + totalPaginas + ", \nPágina Atual = "
+                + paginaAtual + ", \nAberto = " + aberto + ", \nLeitor = " + leitor.getNome() + " ]";
     }
 
     public Livro(String titulo, String autor, int totalPaginas, Pessoa leitor){
@@ -69,9 +69,12 @@ public class Livro implements Publicacao{
 
 
     @Override
-    public void folhear() {
-        // TODO Auto-generated method stub
-        
+    public void folhear(int p) {
+        if(p <= this.totalPaginas){
+            this.paginaAtual = p;        
+        } else {
+            this.paginaAtual = 0;
+        }
     }
 
 
