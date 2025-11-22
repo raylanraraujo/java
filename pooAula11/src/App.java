@@ -14,5 +14,14 @@ public class App {
         a1.setMatricula(111);
         a1.setCurso("Informática");
         a1.pagarMensalidade();
+
+        Bolsista b1 = new Bolsista();
+        b1.setMatricula(112);
+        b1.setNome("Jubileu");
+        b1.setBolsa(12.5f);
+        b1.setSexo("masculino");
+        b1.pagarMensalidade();
+
+        
     }
 }
