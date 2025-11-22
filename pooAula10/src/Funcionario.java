@@ -9,7 +9,7 @@ public class Funcionario extends Pessoa{
     }
 
     public void mudarTrabalho(){
-        //bloco de código
+        this.trabalhando = !this.trabalhando; //para inverter o valor da variável
     }
 
     public String getSetor() {
@@ -27,5 +27,4 @@ public class Funcionario extends Pessoa{
     public void setTrabalhando(boolean trabalhando) {
         this.trabalhando = trabalhando;
     }
-    
 }
