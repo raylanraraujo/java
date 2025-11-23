@@ -13,21 +13,15 @@ public class Peixe extends Animal {
         this.corEscama = corEscama;
     }
 
-
-
     @Override
     public void locomover() {
         System.out.println("Nadando");
     }
 
-
-
     @Override
     public void alimentar() {
         System.out.println("Comendo subtâncias");
     }
-
-
 
     @Override
     public void emitirSom() {
