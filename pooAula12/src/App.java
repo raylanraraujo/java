@@ -5,6 +5,28 @@ public class App {
         Reptil r = new Reptil();
         Peixe p = new Peixe();
         Ave a = new Ave();
+        Canguru c = new Canguru();
+        Cachorro k = new Cachorro();
+
+        System.out.println("\n========================");
+        c.setPeso(55.30f);
+        c.setIdade(3);
+        c.setMembros(4);
+        c.locomover();
+        c.alimentar();
+        c.emitirSom();
+        c.usarBolsa();
+
+        System.out.println("========================");
+        k.setPeso(3.94f);
+        k.setIdade(5);
+        k.setMembros(4);
+        k.locomover();
+        k.alimentar();
+        k.emitirSom();
+        k.abanarRabo();
+
+
 
         System.out.println("\n========================");
         m.setPeso(85.3f);
@@ -33,5 +55,7 @@ public class App {
         a.emitirSom();
         a.fazerNinho();
         System.out.println("");
+
+        
     }
 }
