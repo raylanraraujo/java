@@ -2,7 +2,7 @@ public class App {
     public static void main(String[] args){
         //Animal a = new Animal(); classe abstrada nao gera objetos
         Mamifero m = new Mamifero();
-        Reptil r = new Reptil();
+        //Reptil r = new Reptil();
         Peixe p = new Peixe();
         Ave a = new Ave();
         Canguru c = new Canguru();
