@@ -5,8 +5,6 @@ public class Video implements AcoesVideo{
     private int curtidas;
     private boolean reproduzindo;
 
-    
-
     @Override
     public void like() {
         // TODO Auto-generated method stub
