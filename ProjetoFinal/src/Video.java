@@ -42,7 +42,11 @@ public class Video implements AcoesVideo{
     }
 
     public void setAvaliacao(int avaliacao) {
-        this.avaliacao = avaliacao;
+        //método padrão de setAvaliacao foi alterado para calcular a média das avaliações baseado na quantidade de vídeos assistido
+        int novaAvaliacao;
+        novaAvaliacao = (this.avaliacao + avaliacao)/this.getViews();
+        this.avaliacao = novaAvaliacao;
+        
     }
 
     public int getViews() {
