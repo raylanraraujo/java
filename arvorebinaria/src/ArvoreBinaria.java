@@ -48,13 +48,20 @@ public class ArvoreBinaria {
 
     //impressao realizada em ordem
     private void imprimirArvore(Node node){
+        //pre ordem
+        //System.out.println("Nó " + node.getValor());
         if(node.getNodeEsquerdo() != null){
             imprimirArvore(node.getNodeEsquerdo());
         }
-        System.out.println("Nó " + node.getValor());
+        //in order
+        //System.out.println("Nó " + node.getValor());
+
         if(node.getNodeDireito() != null){
             imprimirArvore(node.getNodeDireito());
         }
+        //pos order
+        System.out.println("Nó " + node.getValor());
+
     }
 
     public void inserir(int valor){

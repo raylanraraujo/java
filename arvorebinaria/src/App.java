@@ -1,15 +1,20 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        Node n, n1, n2;
+       ArvoreBinaria b = new ArvoreBinaria();
 
-        n = new Node(10);
-        n1 = new Node(4);
-        n2 = new Node(3);
-
-        n.setNodeEsquerdo(n1);
-        n.setNodeDireito(n2);
-        System.err.println(n);
-        System.out.println(n.getNodeDireito());
-        System.out.println(n.getNodeEsquerdo());
+       b.inserir(7);
+       b.inserir(3);
+       b.inserir(8);
+       b.inserir(14);
+       b.inserir(13);
+       b.inserir(1);
+       b.inserir(4);
+       b.inserir(10);
+       
+       b.remover(8);
+       
+       b.imprimirArvore();
+       System.out.println("Quantidade de nós: "+ b.getQntNode());
+       System.out.println("Altura: " + b.getAltura());
     }
 }
