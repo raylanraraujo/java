@@ -44,7 +44,7 @@ public class Node {
 
     @Override
     public String toString() {
-        return "No [valor = " + valor + " ]";
+        return "No [valor = " + valor + "]";
     }
 
     
