@@ -49,8 +49,6 @@ public class Main {
 
                 System.out.println(hashFinal);
             }
-
-
         }
         catch (Exception erro) {
             System.out.println("erro no arquivo");
@@ -65,7 +63,5 @@ public class Main {
                 }
             }
         }
-
-
     }
 }
